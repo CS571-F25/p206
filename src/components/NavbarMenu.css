@@ -1,0 +1,40 @@
+/* 🔵 外层导航栏：固定 + 全屏宽度 */
+.navbar-container {
+  width: 100vw;
+  background: white;
+  position: sticky; /* 如果你想要悬浮在页面上方，改成 fixed */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 0;
+}
+
+/* 🔵 内层导航栏内容：居中、固定宽度 */
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* 标题 */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* 链接 */
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  margin-left: 1rem;
+  transition: 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #6a5acd;
+}

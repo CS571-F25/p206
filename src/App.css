@@ -1,42 +1,216 @@
+/* 全站背景渐变 */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f3eaff, #e9ddff, #f5ecff);
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+}
+
+/* React root 不再限制宽度 */
 #root {
-  max-width: 1280px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 页面内容容器（不包含导航栏） */
+.page-container {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ================================
+   导航栏（固定 + 全屏）
+================================ */
+.navbar-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 12px 0;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 导航栏内容：固定宽度 + 居中 */
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* logo标题 */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #333;
 }
 
-.card {
-  padding: 2em;
+/* 链接 */
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  transition: 0.25s;
 }
 
-.read-the-docs {
-  color: #888;
+.nav-link:hover {
+  color: #6a5acd;
 }
+
+/* 所有页面内容自动下移导航栏高度 */
+.content-offset {
+  margin-top: 80px;
+}
+
+/* ================================
+   Home 页面：更宽容器 + 图片网格
+================================ */
+
+/* 更宽：专门用于图片展示的区域 */
+.wide-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 将六张图排成 3 列，自动整齐铺排 */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* 统一图片尺寸、裁切、阴影 */
+.grid-img {
+  width: 100%;
+  height: 360px;            /* 固定高度，保证整齐 */
+  object-fit: cover;        /* 自动裁切保证美观 */
+  border-radius: 12px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease;
+}
+
+.grid-img:hover {
+  transform: scale(1.03);
+}
+
+/* ================================
+   About Me Page
+================================ */
+
+.about-wrapper {
+  max-width: 900px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+}
+
+.about-card {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.about-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #4a3f9c;
+}
+
+.about-intro {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  font-weight: 700;
+  color: #6a5acd;
+}
+
+.section-title {
+  margin-top: 25px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #5a4fb0;
+}
+
+.section-text {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* ===== Destination Page Styling ===== */
+
+.dest-wrapper {
+  max-width: 1400px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+}
+
+.dest-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Card Container */
+.destination-card {
+  width: 100%;
+  max-width: 1100px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Images: side-by-side with spacing */
+.destination-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;              /* <-- ★ 让两张照片分开 */
+  padding: 12px;         /* <-- 让图片不紧贴卡片边缘 */
+  background: #faf7ff;   /* 柔和背景 */
+}
+
+.destination-images img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 10px;   /* 图片圆角更高级 */
+}
+
+/* Info Section */
+.destination-info {
+  padding: 32px 40px;
+}
+
+.destination-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #4a3f9c;
+}
+
+.destination-desc {
+  white-space: pre-line;   /* ★ 让多行文字保持格式 */
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #555;
+}
+
