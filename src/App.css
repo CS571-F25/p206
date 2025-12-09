@@ -214,3 +214,153 @@ body {
   color: #555;
 }
 
+/* 完整居中对齐，不缩小 */
+.search-bar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* --- Search Bar Wrapper 居中 + 减小宽度 --- */
+.search-bar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+/* 搜索栏宽度（从 460px 改为自适应比例） */
+.search-bar {
+  width: 20%;                 /* ★ 你可以调成 55% / 50% / 45% */
+  min-width: 360px;           /* 让显示器小的时候不会太挤 */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 左侧 Search 标签（降低亮度、减少饱和度） */
+.search-label {
+  background-color: #e9e0fa !important;   /* 柔和浅灰紫 */
+  border: 1px solid #cfc3f5 !important;
+  color: #6a53a3 !important;               /* 深灰紫 */
+  font-weight: 600;
+  padding: 9px 14px !important;
+}
+
+/* 输入框（保持高级感但不过亮） */
+.search-input {
+  border: 1px solid #cfc3f5 !important;
+  border-left: none !important;
+  padding: 9px 14px !important;
+  background: #ffffff;
+  border-radius: 0 10px 10px 0 !important;
+  box-shadow: 0 2px 6px rgba(150, 95, 255, 0.18);
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+
+.search-input:focus {
+  border-color: #b39bff !important;
+  box-shadow: 0 4px 12px rgba(150, 95, 255, 0.25) !important;
+}
+
+/* placeholder 更柔和 */
+.search-input::placeholder {
+  color: #7f70b5;
+  opacity: 0.75;
+}
+
+/* ===========================
+   Footer Style
+=========================== */
+
+.footer {
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 60px;
+  color: #4b3e84;
+  font-family: "Inter", sans-serif;
+  opacity: 0.85;
+}
+
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #6a5acd;
+}
+
+.interaction-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.like-btn,
+.fav-btn {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.like-btn {
+  background-color: #ffe3e6;
+  color: #a33;
+}
+
+.like-btn.liked {
+  background-color: #ffb3be;
+  color: red;
+  transform: scale(1.1);
+}
+
+.fav-btn {
+  background-color: #fff3c4;
+  color: #8a6d00;
+}
+
+.fav-btn.favorited {
+  background-color: #ffd86b;
+  color: #c69200;
+  transform: scale(1.1);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 16px;
+  background: #6c5ce7;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.scroll-top-btn:hover {
+  background: #5849c2;
+  transform: scale(1.1);
+}
+
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 50px 0 25px;
+  font-weight: 700;
+  color: #4a3f9c;
+  letter-spacing: 1px;
+}
+
+
+

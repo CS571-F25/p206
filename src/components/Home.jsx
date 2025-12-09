@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Hero from "./Hero";
+import QuoteOfTheDay from "./QuoteOfTheDay"; // ⭐ 新增引用
 
 // 导入你的图片
 import Shanxi1 from "../assets/山西大院.jpg";
@@ -18,22 +20,39 @@ export default function Home() {
                 subtitle="Discover the stories, beauty, and memories behind every journey."
             />
 
+            <QuoteOfTheDay />
+
             {/* ===== 更宽的容器 ===== */}
             <div className="wide-container mt-5">
                 <h2 className="text-center mb-4">Popular Destinations</h2>
 
                 <div className="image-grid">
                     {/* 山西 */}
-                    <img src={Shanxi1} alt="Shanxi" className="grid-img" />
-                    <img src={Shanxi2} alt="Shanxi" className="grid-img" />
+                    <Link to="/destinations?place=Shanxi-Courtyard">
+                        <img src={Shanxi1} alt="Shanxi" className="grid-img" />
+                    </Link>
+
+                    <Link to="/destinations?place=Shanxi-Courtyard">
+                        <img src={Shanxi2} alt="Shanxi" className="grid-img" />
+                    </Link>
 
                     {/* 桂林 */}
-                    <img src={Guilin1} alt="Guilin" className="grid-img" />
-                    <img src={Guilin2} alt="Guilin" className="grid-img" />
+                    <Link to="/destinations?place=Guilin-Guangxi">
+                        <img src={Guilin1} alt="Guilin" className="grid-img" />
+                    </Link>
+
+                    <Link to="/destinations?place=Guilin-Guangxi">
+                        <img src={Guilin2} alt="Guilin" className="grid-img" />
+                    </Link>
 
                     {/* 江西 */}
-                    <img src={Jiangxi1} alt="Jiangxi" className="grid-img" />
-                    <img src={Jiangxi2} alt="Jiangxi" className="grid-img" />
+                    <Link to="/destinations?place=Jiangxi-Ancient-Town">
+                        <img src={Jiangxi1} alt="Jiangxi" className="grid-img" />
+                    </Link>
+
+                    <Link to="/destinations?place=Jiangxi-Ancient-Town">
+                        <img src={Jiangxi2} alt="Jiangxi" className="grid-img" />
+                    </Link>
                 </div>
             </div>
         </>

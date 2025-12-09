@@ -1,16 +1,41 @@
 import { Link } from "react-router-dom";
-import "../App.css"; // 导航栏样式在 App.css 内
+import { Navbar, Container, Nav } from "react-bootstrap";
+import "../App.css";
 
 export default function NavbarMenu() {
   return (
-    <div className="navbar-container">
-      <div className="navbar-inner">
-        <span className="navbar-brand">My Travel Moments</span>
+    <Navbar bg="light" expand="lg" fixed="top" className="shadow-sm navbar-container">
+      <Container className="navbar-inner">
 
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/destinations" className="nav-link">Destinations</Link>
-        <Link to="/about" className="nav-link">About Me</Link>
-      </div>
-    </div>
+        <Navbar.Brand as={Link} to="/" className="navbar-brand fw-bold">
+          My Travel Moments
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="main-navbar" />
+
+        <Navbar.Collapse id="main-navbar">
+          <Nav className="ms-auto">
+
+            <Nav.Link as={Link} to="/" className="nav-link">
+              Home
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/destinations" className="nav-link">
+              Destinations
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/favorites" className="nav-link">
+              Favorites
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/about" className="nav-link">
+              About Me
+            </Nav.Link>
+
+          </Nav>
+        </Navbar.Collapse>
+
+      </Container>
+    </Navbar>
   );
 }

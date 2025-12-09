@@ -1,8 +1,8 @@
-/* 🔵 外层导航栏：固定 + 全屏宽度 */
+
 .navbar-container {
   width: 100vw;
   background: white;
-  position: sticky; /* 如果你想要悬浮在页面上方，改成 fixed */
+  position: sticky; 
   top: 0;
   left: 0;
   z-index: 1000;
@@ -10,7 +10,7 @@
   padding: 10px 0;
 }
 
-/* 🔵 内层导航栏内容：居中、固定宽度 */
+
 .navbar-inner {
   max-width: 1280px;
   margin: 0 auto;

@@ -8,7 +8,7 @@ export default function Hero({ title, subtitle }) {
                 padding: "100px 20px",
                 color: "white",
                 textShadow: "2px 2px 6px rgba(0,0,0,0.5)",
-                textAlign: "center"   // ★★★★★ 只加这一行，让标题居中
+                textAlign: "center"   
             }}
         >
             <h1 className="fw-bold">{title}</h1>
